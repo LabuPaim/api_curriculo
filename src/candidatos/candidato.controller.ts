@@ -3,7 +3,7 @@ import { CandidatoService } from './candidato.service';
 import { CreateCandidatoDto } from './dto/create-candidato.dto';
 import { UpdateCandidatoDto } from './dto/update-candidato.dto';
 
-@Controller('candidato')
+@Controller('/candidato')
 export class CandidatoController {
   constructor(private readonly candidatoService: CandidatoService) {}
 
