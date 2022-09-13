@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CandidatoService } from './plan.service';
-import { CandidatoController } from './plan.controller';
+import { CandidatoService } from './candidato.service';
+import { CandidatoController } from './candidato.controller';
 import { Candidato, CandidatoSchema } from './entities/candidato.entity';
 
 @Module({
@@ -9,4 +9,4 @@ import { Candidato, CandidatoSchema } from './entities/candidato.entity';
   controllers: [CandidatoController],
   providers: [CandidatoService]
 })
-export class PlanModule {}
+export class CandidatoModule {}

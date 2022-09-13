@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { PlanModule } from './candidatos/plan.module';
+import { CandidatoModule } from './candidatos/candidato.module';
 import { RedirectController } from './redirect/redirect.controller';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://admin:mTXFR9wTdfPNyA89@api-telzir.n4fv0fe.mongodb.net/?retryWrites=true&w=majority'),
-    PlanModule
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(`mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_CLUSTER}.8uowe0t.mongodb.net/?retryWrites=true&w=majority`),
+    CandidatoModule
   ],
   controllers: [RedirectController],
   providers: [],
